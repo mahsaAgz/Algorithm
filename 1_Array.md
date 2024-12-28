@@ -99,3 +99,27 @@
 | Type Restriction    | Mixed data types  | Single data type      | Single data type       |
 | Dynamic Resizing    | Yes               | No                   | No                     |
 | Efficiency          | General-purpose   | Memory-efficient      | Best for numerical data|
+
+
+| Feature                          | **Python List**                      | **Array (from `array` module)**           | **NumPy Array**                         |
+|----------------------------------|--------------------------------------|-------------------------------------------|-----------------------------------------|
+| **Definition**                   | Dynamic-sized sequence of elements.  | Fixed-type array for memory efficiency.   | Optimized array for numerical data.     |
+| **Initialization**               | `my_list = [0] * 5`                  | `from array import array; my_array = array('i', [0] * 5)` | `import numpy as np; my_numpy_array = np.zeros(5, dtype=int)` |
+| **Access Element**               | `my_list[2]`                         | `my_array[2]`                             | `my_numpy_array[2]`                     |
+| **Change Element**               | `my_list[2] = 10`                    | `my_array[2] = 10`                        | `my_numpy_array[2] = 10`                |
+| **Determine Size**               | `len(my_list)`                       | `len(my_array)`                           | `my_numpy_array.size`                   |
+| **Check Data Type**              | `type(my_list)`                      | `type(my_array)`                          | `type(my_numpy_array)`                  |
+| **Iterate Over Elements**        | `for x in my_list:`                  | `for x in my_array:`                      | `for x in my_numpy_array:`              |
+| **Add Element**                  | `my_list.append(10)`                 | Not supported (fixed size).               | Not supported (fixed size).             |
+| **Insert Element**               | `my_list.insert(2, 10)`              | Not supported (fixed size).               | Not supported (fixed size).             |
+| **Remove Element by Value**      | `my_list.remove(10)`                 | Not supported (fixed size).               | Not supported (fixed size).             |
+| **Remove Element by Index**      | `my_list.pop(2)`                     | Not supported (fixed size).               | Not supported (fixed size).             |
+| **Find Maximum/Minimum**         | `max(my_list)`, `min(my_list)`       | `max(my_array)`, `min(my_array)`          | `my_numpy_array.max()`, `my_numpy_array.min()` |
+| **Sum of Elements**              | `sum(my_list)`                       | `sum(my_array)`                           | `my_numpy_array.sum()`                  |
+| **Sorting**                      | `my_list.sort()`                     | Manual sorting required.                  | `np.sort(my_numpy_array)`               |
+| **Reverse Order**                | `my_list.reverse()`                  | Manual reversal required.                 | `my_numpy_array[::-1]`                  |
+| **Multi-Dimensional Support**    | Not directly supported. Use nested lists. | Not supported.                           | Directly supports multidimensional arrays: `np.array([[1, 2], [3, 4]])` |
+| **Efficiency**                   | General-purpose, slower for large data. | More efficient than lists for fixed data. | Best for numerical computations.        |
+| **Usage Context**                | Flexible, everyday tasks.            | Small, type-restricted datasets.          | Scientific computing, numerical tasks.  |
+
+
